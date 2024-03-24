@@ -15,7 +15,8 @@ app.use(express.json())
 app.use(bodyParser.text())
 //mongoose.connect("mongodb+srv://adimkr:aditya201602@clustername.mongodb.net/urbanvoguedb");
 
-mongoose.connect(process.env.PORT).then(()=>
+
+mongoose.connect(process.env.DBURL).then(()=>
 {
     console.log("MongoDB Connected successfully !");
 }).catch(err=>
@@ -921,11 +922,11 @@ app.post("/saveincanddec",verifyToken,async(req ,res)=>
 
 
 
+const PORT = process.env.PORT || 3001
 
-
-app.listen(2000, ()=>
+app.listen(PORT, ()=>
 {
-    console.log("Server started at port"+2000);     
+    console.log("Server started at port"+ PORT);     
 })
 
 //mongodb+srv://adimkr:aditya201602@urbanvoguedb.xpucjht.mongodb.net/
