@@ -13,7 +13,6 @@ require('dotenv').config();
 app.use(cors({origin:true}))
 app.use(express.json())
 app.use(bodyParser.text())
-//mongoose.connect("mongodb+srv://adimkr:aditya201602@clustername.mongodb.net/urbanvoguedb");
 
 
 mongoose.connect(process.env.DBURL).then(()=>
